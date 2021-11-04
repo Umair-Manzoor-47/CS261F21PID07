@@ -173,4 +173,27 @@ def cocktail_Sort(A, col):
                 swap = True 
         first = first + 1 # first is at its position
     
+    return A 
+
+def brick_sort(A, col):
+    n = len(A)
+    # Initially array is unsorted
+    sorted = False
+
+    while sorted == False: # till array is sorted
+        # lets say array is sorted then No condition will run and termination occurs 
+        sorted = True 
+
+        for idx in range(1, n-1, 2): # Odd incrementation
+
+            if A[idx][col] > A[idx+1][col]: # swap if current entry is less 
+                A[idx], A[idx+1] = A[idx+1], A[idx]
+                sorted = False
+                 
+        for idx in range(0, n-1, 2): # Even incrementation
+            if A[idx][col] > A[idx+1][col]:
+                A[idx], A[idx+1] = A[idx+1], A[idx]
+                sorted = False
+     
     return A
+

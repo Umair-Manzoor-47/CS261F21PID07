@@ -139,47 +139,68 @@ import pandas as pd
 #         B = insertion_sort(A, i, key, col) 
 #     return B
 
-def cocktail_Sort(A, col):
-    last  = len(A) - 1 # len
-    swap = True
-    first = 0
-    while swap:
-        swap = False #in case array is sorted
+# def cocktail_Sort(A, col):
+#     last  = len(A) - 1 # len
+#     swap = True
+#     first = 0
+#     while swap:
+#         swap = False #in case array is sorted
  
-        # Left to Right
-        for idx in range(first, last):
+#         # Left to Right
+#         for idx in range(first, last):
 
-            if (A[idx] [col] > A[idx + 1][col]): # if greater 
-                A[idx], A[idx + 1] = A[idx + 1], A[idx] # swap
-                swap = True
+#             if (A[idx] [col] > A[idx + 1][col]): # if greater 
+#                 A[idx], A[idx + 1] = A[idx + 1], A[idx] # swap
+#                 swap = True
 
-        # swapping doesn't occur then array is already sorted and break 
-        if swap != True:
-            break
+#         # swapping doesn't occur then array is already sorted and break 
+#         if swap != True:
+#             break
         
-        # now to proceed from right to left (Down-to loop)
-        swap = False
+#         # now to proceed from right to left (Down-to loop)
+#         swap = False
 
-        last = last-1 # last number is at its position
+#         last = last-1 # last number is at its position
 
-        for k in range(last-1, first-1, -1):
+#         for k in range(last-1, first-1, -1):
 
-            if (A[k][col] > A[k + 1][col]): # if less 
-                A[k], A[k + 1] = A[k + 1], A[k] # swap to previous
-                swap = True 
-        first = first + 1 # first is at its position
-    
+#             if (A[k][col] > A[k + 1][col]): # if less 
+#                 A[k], A[k + 1] = A[k + 1], A[k] # swap to previous
+#                 swap = True 
+#         first = first + 1 # first is at its position   
+#     return A
+
+def brick_sort(A, col):
+    n = len(A)
+    # Initially array is unsorted
+    sorted = False
+
+    while sorted == False: # till array is sorted
+        # lets say array is sorted then No condition will run and termination occurs 
+        sorted = True 
+
+        for idx in range(1, n-1, 2): # Odd incrementation
+
+            if A[idx][col] > A[idx+1][col]: # swap if current entry is less 
+                A[idx], A[idx+1] = A[idx+1], A[idx]
+                sorted = False
+                 
+        for idx in range(0, n-1, 2): # Even incrementation
+            if A[idx][col] > A[idx+1][col]:
+                A[idx], A[idx+1] = A[idx+1], A[idx]
+                sorted = False
+     
     return A
-
 
 
 df = pd.read_csv("Movies2.0.csv")
 Td = df.values.tolist()
 
-Td = cocktail_Sort(Td, 9)
+Td = brick_sort(Td, 2)
+
 for i in range (0, 4):
     print(Td[i][1])
-    print(Td[i][9])
+    print(Td[i][2])
 
 
 

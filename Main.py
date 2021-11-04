@@ -174,8 +174,8 @@ class GUI(QMainWindow):
          
         # 2D list
         self.TDlist.append(title, year, time, rating, genre, votes,  synopsis, director)
-        # Data Frame
 
+        # Data Frame
         self.movies = pd.DataFrame({"Title": title, "Releasing year" : year, "Watch Time": time,"Rating": rating, "Genre": genre, "Votes": votes,  "Synopsis": synopsis, "Cast": cast, "Director": director})
 
     def export(self):

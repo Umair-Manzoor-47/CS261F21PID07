@@ -1,5 +1,7 @@
 
 import pandas as pd
+
+# from algorithms import Ascendig
 # def selection_sort(A, entry):
 #     n = len(A)       # length            
 #     for idx in range(n-1):        
@@ -10,9 +12,7 @@ import pandas as pd
 #         if min != idx:         # swap             
 #             A[idx], A[min]= A[min], A[idx]
 
-#         return A 
-
-
+#     return A 
 
 # def bubble_sort(A, entry):
 #     n = len(A)  # length of Array
@@ -170,36 +170,49 @@ import pandas as pd
 #         first = first + 1 # first is at its position   
 #     return A
 
-def brick_sort(A, col):
-    n = len(A)
-    # Initially array is unsorted
-    sorted = False
+# def brick_sort(A, col):
+#     n = len(A)
+#     # Initially array is unsorted
+#     sorted = False
 
-    while sorted == False: # till array is sorted
-        # lets say array is sorted then No condition will run and termination occurs 
-        sorted = True 
+#     while sorted == False: # till array is sorted
+#         # lets say array is sorted then No condition will run and termination occurs 
+#         sorted = True 
 
-        for idx in range(1, n-1, 2): # Odd incrementation
+#         for idx in range(1, n-1, 2): # Odd incrementation
 
-            if A[idx][col] > A[idx+1][col]: # swap if current entry is less 
-                A[idx], A[idx+1] = A[idx+1], A[idx]
-                sorted = False
+#             if A[idx][col] > A[idx+1][col]: # swap if current entry is less 
+#                 A[idx], A[idx+1] = A[idx+1], A[idx]
+#                 sorted = False
                  
-        for idx in range(0, n-1, 2): # Even incrementation
-            if A[idx][col] > A[idx+1][col]:
-                A[idx], A[idx+1] = A[idx+1], A[idx]
-                sorted = False
+#         for idx in range(0, n-1, 2): # Even incrementation
+#             if A[idx][col] > A[idx+1][col]:
+#                 A[idx], A[idx+1] = A[idx+1], A[idx]
+#                 sorted = False
      
-    return A
+#     return A
 
+def Ascending(A, col):
+        for i in range(1, len(A)):
+            key = A[i] # current is key
+            j = i - 1 # precedent idx
+        
+            while j >= 0 and A[j][col] > key[col]: # down-to loop
+                # til previous is greater than current
+                A[j+1] = A[j]                      # put previous next to current
+                j = j - 1                          # decrease index 
+            
+            # put current to its place 
+            A[j+1] = key
 
-df = pd.read_csv("Movies2.0.csv")
+        return A
+
+df = pd.read_csv("test.csv")
 Td = df.values.tolist()
 
-Td = brick_sort(Td, 2)
+Td = Ascending(Td, 2)
 
-for i in range (0, 4):
-    print(Td[i][1])
+for i in range (0, len(Td)):
     print(Td[i][2])
 
 

@@ -223,7 +223,7 @@
      </property>
     </widget>
    </widget>
-   <widget class="QGroupBox" name="Descending_Radio">
+   <widget class="QGroupBox" name="groupBox_2">
     <property name="geometry">
      <rect>
       <x>300</x>
@@ -270,6 +270,11 @@
      </item>
      <item>
       <property name="text">
+       <string>Bubble Sort</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
        <string>Selection Sort</string>
       </property>
      </item>
@@ -285,21 +290,6 @@
      </item>
      <item>
       <property name="text">
-       <string>Counting Sort</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>Radix Sort</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>Bucket Sort</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
        <string>Shell Sort</string>
       </property>
      </item>
@@ -310,7 +300,7 @@
      </item>
      <item>
       <property name="text">
-       <string>Cycle Sort</string>
+       <string>Brick Sort</string>
       </property>
      </item>
     </widget>
@@ -378,7 +368,7 @@
      </item>
      <item>
       <property name="text">
-       <string>Votes</string>
+       <string>Rating</string>
       </property>
      </item>
      <item>
@@ -388,7 +378,12 @@
      </item>
      <item>
       <property name="text">
-       <string>Cast</string>
+       <string>Votes</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Synopsis</string>
       </property>
      </item>
      <item>
@@ -410,7 +405,7 @@
       <string>Ascending</string>
      </property>
     </widget>
-    <widget class="QRadioButton" name="radioButton">
+    <widget class="QRadioButton" name="Descending_Radio">
      <property name="geometry">
       <rect>
        <x>270</x>
@@ -426,9 +421,9 @@
     <widget class="QLabel" name="Sorting_Time_count">
      <property name="geometry">
       <rect>
-       <x>290</x>
+       <x>100</x>
        <y>160</y>
-       <width>61</width>
+       <width>81</width>
        <height>20</height>
       </rect>
      </property>
@@ -445,7 +440,7 @@
     <widget class="QLabel" name="MoviesTime_count_Label_3">
      <property name="geometry">
       <rect>
-       <x>200</x>
+       <x>0</x>
        <y>160</y>
        <width>121</width>
        <height>20</height>
@@ -464,7 +459,7 @@
     <widget class="QLabel" name="Movies_count_Label_4">
      <property name="geometry">
       <rect>
-       <x>200</x>
+       <x>0</x>
        <y>140</y>
        <width>121</width>
        <height>20</height>
@@ -483,9 +478,9 @@
     <widget class="QLabel" name="Movies_Sorted">
      <property name="geometry">
       <rect>
-       <x>300</x>
+       <x>100</x>
        <y>140</y>
-       <width>47</width>
+       <width>71</width>
        <height>20</height>
       </rect>
      </property>
@@ -497,70 +492,6 @@
      </property>
      <property name="text">
       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt; color:#5e5e5e;&quot;&gt;0&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-     </property>
-    </widget>
-    <widget class="QComboBox" name="MultiColumn_CB">
-     <property name="geometry">
-      <rect>
-       <x>120</x>
-       <y>100</y>
-       <width>131</width>
-       <height>22</height>
-      </rect>
-     </property>
-     <item>
-      <property name="text">
-       <string>Title</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>Realse year</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>Runtime</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>Votes</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>Genre</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>Cast</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>Director</string>
-      </property>
-     </item>
-    </widget>
-    <widget class="QLabel" name="Movies_count_Label_5">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>100</y>
-       <width>91</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>MS Sans Serif</family>
-       <pointsize>15</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; color:#5e5e5e;&quot;&gt;Select column :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
     </widget>
     <widget class="QPushButton" name="Button_Sort">
@@ -621,7 +552,7 @@
      </item>
      <item>
       <property name="text">
-       <string>Votes</string>
+       <string>Rating</string>
       </property>
      </item>
      <item>
@@ -631,7 +562,12 @@
      </item>
      <item>
       <property name="text">
-       <string>Cast</string>
+       <string>Votes</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Synopsis</string>
       </property>
      </item>
      <item>
@@ -685,7 +621,7 @@
       <string>Ends</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit">
+    <widget class="QLineEdit" name="keyword">
      <property name="geometry">
       <rect>
        <x>130</x>
@@ -793,8 +729,17 @@
       <x>0</x>
       <y>200</y>
       <width>1011</width>
-      <height>431</height>
+      <height>441</height>
      </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="sizeAdjustPolicy">
+     <enum>QAbstractScrollArea::AdjustToContents</enum>
     </property>
     <column>
      <property name="text">
@@ -876,7 +821,7 @@
    <widget class="QLabel" name="label_7">
     <property name="geometry">
      <rect>
-      <x>490</x>
+      <x>520</x>
       <y>640</y>
       <width>91</width>
       <height>20</height>
@@ -894,7 +839,7 @@
    <widget class="QPushButton" name="Export">
     <property name="geometry">
      <rect>
-      <x>750</x>
+      <x>730</x>
       <y>640</y>
       <width>75</width>
       <height>23</height>
@@ -904,7 +849,7 @@
      <string>Export CSV</string>
     </property>
    </widget>
-   <zorder>Descending_Radio</zorder>
+   <zorder>groupBox_2</zorder>
    <zorder>groupBox_3</zorder>
    <zorder>groupBox</zorder>
    <zorder>tableWidget</zorder>

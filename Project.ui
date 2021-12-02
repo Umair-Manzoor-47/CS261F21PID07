@@ -423,7 +423,7 @@
       <rect>
        <x>100</x>
        <y>160</y>
-       <width>81</width>
+       <width>131</width>
        <height>20</height>
       </rect>
      </property>
@@ -454,44 +454,6 @@
      </property>
      <property name="text">
       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; color:#5e5e5e;&quot;&gt;Time Taken :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="Movies_count_Label_4">
-     <property name="geometry">
-      <rect>
-       <x>0</x>
-       <y>140</y>
-       <width>121</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>MS Sans Serif</family>
-       <pointsize>15</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; color:#5e5e5e;&quot;&gt;Entries Sorted :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="Movies_Sorted">
-     <property name="geometry">
-      <rect>
-       <x>100</x>
-       <y>140</y>
-       <width>71</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>MS Sans Serif</family>
-       <pointsize>12</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt; color:#5e5e5e;&quot;&gt;0&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
     </widget>
     <widget class="QPushButton" name="Button_Sort">
@@ -647,8 +609,8 @@
     <widget class="QRadioButton" name="AND_Radio">
      <property name="geometry">
       <rect>
-       <x>60</x>
-       <y>90</y>
+       <x>40</x>
+       <y>120</y>
        <width>82</width>
        <height>17</height>
       </rect>
@@ -661,7 +623,7 @@
      <property name="geometry">
       <rect>
        <x>150</x>
-       <y>90</y>
+       <y>120</y>
        <width>82</width>
        <height>17</height>
       </rect>
@@ -673,27 +635,14 @@
     <widget class="QRadioButton" name="NOT_Radio">
      <property name="geometry">
       <rect>
-       <x>220</x>
-       <y>90</y>
+       <x>230</x>
+       <y>120</y>
        <width>82</width>
        <height>17</height>
       </rect>
      </property>
      <property name="text">
       <string>NOT</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_4">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>150</y>
-       <width>51</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Query : &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
     </widget>
     <widget class="QPushButton" name="Search_Button">
@@ -707,19 +656,6 @@
      </property>
      <property name="text">
       <string>Search</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_5">
-     <property name="geometry">
-      <rect>
-       <x>80</x>
-       <y>160</y>
-       <width>231</width>
-       <height>16</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Dark Knight AND Christopher Nolan AND 2006</string>
      </property>
     </widget>
    </widget>

@@ -25,6 +25,8 @@ class GUI(QMainWindow):
         QMainWindow.__init__(self)  
         self.gu = Ui_MainWindow()
         self.gu.setupUi(self)
+        self.gu.Scraping_progress.setValue(0)
+        self.gu.Scraping_progress.setMaximum(100)
         self.clickEvent()
         self.movies = None
         self.TDlist = []
@@ -45,6 +47,8 @@ class GUI(QMainWindow):
         start_time = datetime.now()
         idx = self.gu.Algorithm_list.currentIndex()
         col = self.gu.Column_CB_2.currentIndex()
+        if col == 2 or col == 5:
+            self.TDlist = self.getInt(self.TDlist)
         print(self.gu.Descending_Radio.isChecked())
          
         if self.gu.Descending_Radio.isChecked():
@@ -120,7 +124,6 @@ class GUI(QMainWindow):
             
     def scrap(self):
         start_time = datetime.now()
-        
 
         # header 
         headers = {"Accept-Language": "en-US,en;q=0.5"}
@@ -157,7 +160,7 @@ class GUI(QMainWindow):
                 year.append(year_of_release.strip())
                 
                 # runtime
-                runtime = store.p.find("span", class_ = 'runtime').text.replace(" min", "") if store.p.find("span", class_ = 'runtime') else "0" + ".00"
+                runtime = store.p.find("span", class_ = 'runtime').text.replace(" min", "") if store.p.find("span", class_ = 'runtime') else "0" 
 
                 time.append(runtime)
                 
@@ -168,7 +171,7 @@ class GUI(QMainWindow):
                 # votes
                 value = store.find_all('span', attrs = {'name': "nv"})
                 vote = value[0].text if len(value) > 0 else "_"
-                vote = vote.replace(",", "")+ ".00"
+                vote = vote.replace(",", "")
                 votes.append(vote)
                 
                 # Genre 
@@ -202,6 +205,8 @@ class GUI(QMainWindow):
                     self.gu.Movies_count.setText(str(r))
             page = "https://www.imdb.com"+ str(Next_page['href'])
             counter += 1
+
+
         end_time = datetime.now()
         self.gu.Scraping_Time_count.setText(str(end_time - start_time))
    
@@ -224,15 +229,24 @@ class GUI(QMainWindow):
     def thread(self):
         self.gu.Stop_button.setEnabled(True)
         self.gu.Pause_button.setEnabled(True)
-        thread = threading.Thread(target= self.scrap)
-        
+        thread = threading.Thread(target= self.scrap)   
         thread.start()
-
+        
+    def progress(self):
+        self.gu.Scraping_progress.setValue(self.gu.Scraping_progress.value()+1)
+        
     def getString(self, A):
         for i in A:
             i[2] = str(i[2])
             i[5] = str(i[5])
         
+        return A
+    
+    def getInt(self, A):
+        for i in range (len(A)):
+            A[i][2] = int(A[i][2])
+            A[i][5] = int(A[i][5])
+
         return A
 
 app = QApplication(sys.argv)
